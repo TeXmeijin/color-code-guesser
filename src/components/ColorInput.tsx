@@ -58,6 +58,7 @@ export const ColorInput = ({ color, setUserColor }: ColorInputProps) => {
           value={red}
           onChange={onChange}
           autoComplete="off"
+          placeholder={"E5"}
           className="w-16 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400"
         />
       </div>
@@ -71,6 +72,7 @@ export const ColorInput = ({ color, setUserColor }: ColorInputProps) => {
           value={green}
           onChange={onChange}
           autoComplete="off"
+          placeholder={"4F"}
           className="w-16 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400"
         />
       </div>
@@ -84,6 +86,7 @@ export const ColorInput = ({ color, setUserColor }: ColorInputProps) => {
           value={blue}
           onChange={onChange}
           autoComplete="off"
+          placeholder={"A1"}
           className="w-16 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400"
         />
       </div>
