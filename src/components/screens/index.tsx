@@ -53,7 +53,7 @@ export const Index = () => {
   return (
     <div
       className="relative font-mono text-white h-screen flex flex-col justify-center items-center leading-7 tracking-wider"
-      style={{ backgroundColor: color }}
+      style={{ backgroundColor: showResult ? "#000" : color }}
     >
       <h1 className="absolute top-4 left-4 text-xl md:text-2xl font-bold border-2 p-2">
         <span className="text-shadow shadow-gray-600">Color Code Guesser</span>

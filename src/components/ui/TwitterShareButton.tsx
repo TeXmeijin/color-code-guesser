@@ -10,7 +10,7 @@ type Props = {
 export const TwitterShareButton: FC<Props> = ({ title, url }) => {
   return (
     <SNSShareButton
-      href={`https://twitter.com/intent/tweet?text=${title}%0a ${encodeURIComponent(
+      href={`https://twitter.com/intent/tweet?hashtags=colorcodeguesser&text=${title}%0a ${encodeURIComponent(
         url
       )}`}
       label={"Share With Twitter"}

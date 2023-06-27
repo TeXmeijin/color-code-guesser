@@ -57,10 +57,22 @@ export const Result = ({
             key={i}
             className="flex md:flex-col items-center justify-center space-x-4 mt-2"
           >
-            <div
-              className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-white"
-              style={{ backgroundColor: color }}
-            />
+            <div>
+              <div
+                className={
+                  "w-16 h-8 rounded-tl-full rounded-tr-full border border-white"
+                }
+                style={{ backgroundColor: color }}
+              ></div>
+              <div
+                className={
+                  "w-16 h-8 rounded-bl-full rounded-br-full border border-white"
+                }
+                style={{
+                  backgroundColor: `#${userColorHistory[i].toUpperCase()}`,
+                }}
+              ></div>
+            </div>
             <div className={"grid grid-cols-2 text-sm md:text-base"}>
               <div className="text-right mr-1">Correct:</div>
               <div className="text-left">{color}</div>
