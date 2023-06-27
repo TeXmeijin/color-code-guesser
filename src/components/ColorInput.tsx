@@ -1,63 +1,90 @@
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 type ColorInputProps = {
-  userColor: string;
+  color: string;
   setUserColor: (color: string) => void;
 };
 
-export const ColorInput = ({ userColor, setUserColor }: ColorInputProps) => {
-  const [r, g, b] = userColor
-    ? [userColor.slice(0, 2), userColor.slice(2, 4), userColor.slice(4, 6)]
-    : ["", "", ""];
-  const [inputR, setInputR] = useState(r);
-  const [inputG, setInputG] = useState(g);
-  const [inputB, setInputB] = useState(b);
+export const ColorInput = ({ color, setUserColor }: ColorInputProps) => {
+  const [red, setRed] = useState("");
+  const [green, setGreen] = useState("");
+  const [blue, setBlue] = useState("");
 
-  const handleInputChange = (
-    value: string,
-    setInput: (value: string) => void,
-    index: number
-  ) => {
+  const redRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const [r, g, b] = color
+      ? [color.slice(0, 2), color.slice(2, 4), color.slice(4, 6)]
+      : ["", "", ""];
+    setRed(r);
+    setGreen(g);
+    setBlue(b);
+
+    if (!color) {
+      redRef.current?.focus();
+    }
+  }, [color]);
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
     if (value.length <= 2 && /^[0-9a-fA-F]*$/.test(value)) {
-      const newValue = value.toUpperCase();
-      setInput(newValue);
-      if (index === 0) {
-        setUserColor(newValue + inputG + inputB);
-      } else if (index === 1) {
-        setUserColor(inputR + newValue + inputB);
-      } else {
-        setUserColor(inputR + inputG + newValue);
+      if (name === "red") {
+        setRed(value.toUpperCase());
+      } else if (name === "green") {
+        setGreen(value.toUpperCase());
+      } else if (name === "blue") {
+        setBlue(value.toUpperCase());
       }
     }
   };
 
+  useEffect(() => {
+    if (red.length === 2 && green.length === 2 && blue.length === 2) {
+      setUserColor(`${red}${green}${blue}`);
+    }
+  }, [red, green, blue, setUserColor]);
+
   return (
-    <div className="flex gap-x-2">
-      <div className="flex flex-col items-center">
-        <label className="block mb-1">R</label>
+    <div className="flex justify-between gap-x-2">
+      <div className="text-center">
+        <label htmlFor="red" className="block">
+          R
+        </label>
         <input
-          className="w-12 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400 mb-4"
-          type="text"
-          value={inputR}
-          onChange={(e) => handleInputChange(e.target.value, setInputR, 0)}
+          ref={redRef}
+          id="red"
+          name="red"
+          value={red}
+          onChange={onChange}
+          autoComplete="off"
+          className="w-16 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400"
         />
       </div>
-      <div className="flex flex-col items-center">
-        <label className="block mb-1">G</label>
+      <div className="text-center">
+        <label htmlFor="green" className="block">
+          G
+        </label>
         <input
-          className="w-12 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400 mb-4"
-          type="text"
-          value={inputG}
-          onChange={(e) => handleInputChange(e.target.value, setInputG, 1)}
+          id="green"
+          name="green"
+          value={green}
+          onChange={onChange}
+          autoComplete="off"
+          className="w-16 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400"
         />
       </div>
-      <div className="flex flex-col items-center">
-        <label className="block mb-1">B</label>
+      <div className="text-center">
+        <label htmlFor="blue" className="block">
+          B
+        </label>
         <input
-          className="w-12 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400 mb-4"
-          type="text"
-          value={inputB}
-          onChange={(e) => handleInputChange(e.target.value, setInputB, 2)}
+          id="blue"
+          name="blue"
+          value={blue}
+          onChange={onChange}
+          autoComplete="off"
+          className="w-16 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400"
         />
       </div>
     </div>
