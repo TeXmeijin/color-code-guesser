@@ -47,8 +47,8 @@ export const Index = () => {
       className="relative font-mono h-screen flex flex-col justify-center items-center"
       style={{ backgroundColor: color }}
     >
-      <div className="absolute top-4 left-4 text-2xl font-bold border-2 p-2">
-        Color Code Guesser
+      <div className="absolute top-4 left-4 text-xl md:text-2xl font-bold border-2 p-2">
+        <span className="text-shadow shadow-gray-800">Color Code Guesser</span>
       </div>
       {!showResult && <Header questionCount={questionCount} />}
       {!showResult && (
