@@ -58,6 +58,19 @@ export const Index = () => {
       <h1 className="absolute top-4 left-4 text-xl md:text-2xl font-bold border-2 p-2">
         <span className="text-shadow shadow-gray-600">Color Code Guesser</span>
       </h1>
+      <p className={"absolute bottom-4 right-4 text-sm"}>
+        <span>
+          Created By{" "}
+          <a
+            href="https://twitter.com/Meijin_garden"
+            rel="nofollow"
+            target="_blank"
+            className={"underline text-indigo-500"}
+          >
+            @Meijin_garden
+          </a>
+        </span>
+      </p>
       {!showResult && <Header questionCount={questionCount} />}
       {!showResult && (
         <ColorInput color={userColor} setUserColor={setUserColor} />

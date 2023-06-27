@@ -36,7 +36,7 @@ export const Button = ({
         </>
       ) : (
         <button
-          className="bg-gray-500/30 hover:bg-gray-700/30 text-white border border-white font-bold py-2 px-4 rounded disabled:text-gray-400 disabled:font-normal"
+          className="bg-gray-500/30 hover:bg-gray-700/30 text-white border border-white font-bold py-2 px-4 rounded disabled:bg-gray-500 disabled:text-gray-300 disabled:font-normal"
           onClick={() => checkAnswer()}
           disabled={!isValidColor}
         >
