@@ -52,7 +52,7 @@ export const Index = () => {
 
   return (
     <div
-      className="relative font-mono h-screen flex flex-col justify-center items-center leading-7 tracking-wider"
+      className="relative font-mono text-white h-screen flex flex-col justify-center items-center leading-7 tracking-wider"
       style={{ backgroundColor: color }}
     >
       <h1 className="absolute top-4 left-4 text-xl md:text-2xl font-bold border-2 p-2">
