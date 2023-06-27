@@ -46,7 +46,7 @@ export const ColorInput = ({ color, setUserColor }: ColorInputProps) => {
   }, [red, green, blue, setUserColor]);
 
   return (
-    <div className="flex justify-between gap-x-2">
+    <div className="flex justify-between gap-x-4">
       <div className="text-center">
         <label htmlFor="red" className="block">
           R
@@ -59,7 +59,7 @@ export const ColorInput = ({ color, setUserColor }: ColorInputProps) => {
           onChange={onChange}
           autoComplete="off"
           placeholder={"E5"}
-          className="w-16 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400"
+          className="w-16 border border-gray-300 text-gray-900 text-lg rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400"
         />
       </div>
       <div className="text-center">
@@ -73,7 +73,7 @@ export const ColorInput = ({ color, setUserColor }: ColorInputProps) => {
           onChange={onChange}
           autoComplete="off"
           placeholder={"4F"}
-          className="w-16 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400"
+          className="w-16 border border-gray-300 text-gray-900 text-lg rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400"
         />
       </div>
       <div className="text-center">
@@ -87,7 +87,7 @@ export const ColorInput = ({ color, setUserColor }: ColorInputProps) => {
           onChange={onChange}
           autoComplete="off"
           placeholder={"A1"}
-          className="w-16 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400"
+          className="w-16 border border-gray-300 text-gray-900 text-lg rounded focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:placeholder-gray-400"
         />
       </div>
     </div>

@@ -63,7 +63,7 @@ export const Index = () => {
         <ColorInput color={userColor} setUserColor={setUserColor} />
       )}
       {!showResult && (
-        <div className="mt-12">
+        <div className="mt-8">
           <Button
             showNext={showNext}
             questionCount={questionCount}
