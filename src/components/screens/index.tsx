@@ -6,6 +6,7 @@ import { ColorInput } from "@/components/ColorInput";
 import { Button } from "@/components/Button";
 import { ColorDiff } from "@/components/ColorDiff";
 import { Result } from "@/components/Result";
+import Head from "next/head";
 
 export const Index = () => {
   const [color, setColor] = useState("");
@@ -55,6 +56,15 @@ export const Index = () => {
       className="relative font-mono h-screen flex flex-col justify-center items-center leading-7 tracking-wider"
       style={{ backgroundColor: color }}
     >
+      <Head>
+        <title>Color Code Guesser</title>
+        <meta
+          name={"description"}
+          content={
+            "Color Code Guesser - This is a simple game of guessing the color code of the displayed color."
+          }
+        />
+      </Head>
       <h1 className="absolute top-4 left-4 text-xl md:text-2xl font-bold border-2 p-2">
         <span className="text-shadow shadow-gray-600">Color Code Guesser</span>
       </h1>
