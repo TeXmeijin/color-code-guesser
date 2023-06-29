@@ -73,19 +73,19 @@ export const Index = () => {
       </p>
       {!showResult && <Header questionCount={questionCount} />}
       {!showResult && (
-        <ColorInput color={userColor} setUserColor={setUserColor} />
-      )}
-      {!showResult && (
-        <div className="mt-8">
-          <Button
-            showNext={showNext}
-            questionCount={questionCount}
-            checkAnswer={checkAnswer}
-            generateColor={generateColor}
-            finishGame={finishGame}
-            isValidColor={!!userColor}
-          />
-        </div>
+        <form action="" className={"flex flex-col items-center"}>
+          <ColorInput key={color} setUserColor={setUserColor} />
+          <div className="mt-8">
+            <Button
+              showNext={showNext}
+              questionCount={questionCount}
+              checkAnswer={checkAnswer}
+              generateColor={generateColor}
+              finishGame={finishGame}
+              isValidColor={!!userColor}
+            />
+          </div>
+        </form>
       )}
       {showNext && difference !== null && (
         <div className="mt-4">
